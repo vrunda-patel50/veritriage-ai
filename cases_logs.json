@@ -1,0 +1,98 @@
+{
+  "Case A: Excursion #402 (Internal Chamber Drift vs. Supplier Timing Coincidence)": {
+    "case_id": "EX-402",
+    "title": "Case A: Excursion #402 (Internal Chamber Drift vs. Supplier Timing Coincidence)",
+    "sensor_col": "Feature_59",
+    "affected_chambers": "Chamber #2 ONLY (Chambers #1, #3, #4 Normal)",
+    "naive_quarantine_wafers": 400,
+    "precision_quarantine_wafers": 45,
+    "supplier_name": "Apex Wafer Supply (Small Local Vendor)",
+    "supplier_lot": "Silicon Batch Lot #209",
+    "excursion_status": "ACTIVE EXCURSION — Single-Chamber Anomaly",
+    "logs": [
+      {
+        "log_id": "#V-209",
+        "timestamp": "12:45 PM",
+        "category": "Supplier Delivery",
+        "location": "Chambers #1, #2, #3",
+        "message": "Loaded new silicon wafer batch Lot #209 from Apex Wafer Supply across Chambers #1, #2, and #3."
+      },
+      {
+        "log_id": "#M-101",
+        "timestamp": "01:15 PM",
+        "category": "Shift Note",
+        "location": "Chamber #1",
+        "message": "Routine optical viewport wipe completed on Chamber #1. Baseline nominal."
+      },
+      {
+        "log_id": "#M-104",
+        "timestamp": "01:35 PM",
+        "category": "Maintenance Ticket",
+        "location": "Chamber #2",
+        "message": "Technician performed unscheduled pressure-valve reseal and manual throttle calibration on Chamber #2."
+      },
+      {
+        "log_id": "#T-412",
+        "timestamp": "02:00 PM",
+        "category": "Telemetry Excursion",
+        "location": "Chamber #2",
+        "message": "SECOM Feature_59 crossed +3.0 sigma threshold exclusively on Chamber #2 (Wafer Runs #422-#435 failed electrical gate test)."
+      },
+      {
+        "log_id": "#Q-88",
+        "timestamp": "02:15 PM",
+        "category": "Cross-Line Control Check",
+        "location": "Chambers #1 & #3",
+        "message": "Chambers #1 and #3 completed processing 300 wafers from Apex Wafer Supply Lot #209 with 0 failures (100% pass rate)."
+      }
+    ]
+  },
+  "Case B: Excursion #518 (Confirmed Multi-Chamber Supplier Contamination)": {
+    "case_id": "EX-518",
+    "title": "Case B: Excursion #518 (Confirmed Multi-Chamber Supplier Contamination)",
+    "sensor_col": "Feature_103",
+    "affected_chambers": "Chambers #1, #2, AND #3 Simultaneously",
+    "naive_quarantine_wafers": 400,
+    "precision_quarantine_wafers": 400,
+    "supplier_name": "ChemCorp International",
+    "supplier_lot": "Dielectric Precursor Batch #88",
+    "excursion_status": "CRITICAL EXCURSION — Multi-Chamber Lot Contamination",
+    "logs": [
+      {
+        "log_id": "#V-312",
+        "timestamp": "08:30 AM",
+        "category": "Supplier Delivery",
+        "location": "Central Chemical Bay",
+        "message": "Received new dielectric chemical precursor Batch #88 from ChemCorp International."
+      },
+      {
+        "log_id": "#L-405",
+        "timestamp": "09:15 AM",
+        "category": "Material Load Log",
+        "location": "Chambers #1, #2, #3",
+        "message": "Connected ChemCorp Precursor Batch #88 manifold to feed lines supplying Chambers #1, #2, and #3."
+      },
+      {
+        "log_id": "#M-210",
+        "timestamp": "10:00 AM",
+        "category": "Shift Note",
+        "location": "All Chambers",
+        "message": "Zero mechanical maintenance, valve adjustments, or calibration changes performed on any chamber today."
+      },
+      {
+        "log_id": "#T-518",
+        "timestamp": "10:30 AM",
+        "category": "Telemetry Excursion",
+        "location": "Chambers #1, #2, #3",
+        "message": "SECOM Feature_103 spiked > +3.0 sigma simultaneously across Chambers #1, #2, and #3. Film thickness failures on all 3 tools."
+      },
+      {
+        "log_id": "#Q-94",
+        "timestamp": "10:45 AM",
+        "category": "Cross-Line Control Check",
+        "location": "Chamber #4 Control",
+        "message": "Chamber #4 (running legacy chemical Batch #81 from prior week) shows 0.0 sigma drift and 100% passing wafers."
+      }
+    ]
+  }
+}
